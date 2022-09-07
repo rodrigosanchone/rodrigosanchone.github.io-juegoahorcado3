@@ -1,0 +1,148 @@
+/*celular*/
+.inputPalabra{
+    width: 80%;
+    margin: 20px 20px;
+    height: 15vh;
+}
+
+.inputPalabra input{
+    padding: 10px 30px ;
+    width: 100%;
+    border: #E5E5E5;
+    background-color: #E5E5E5;
+    outline: 0;
+    font-size: 32px;
+}
+
+.inputPalabra input::placeholder{
+    color: #0A3871;
+    height: 48px;
+    font-size: 32px;
+    font-family: Inter;
+}
+
+.maximo{
+    display: flex;
+    margin-left:30PX;
+}
+
+.maximo img{
+    margin-top: 15px;
+    height: 20px;
+}
+
+.accion2{
+    display: flex;
+    flex-direction: column;
+  }
+
+.btn3,.btn4{
+    width:90%;
+    margin:auto;
+    height: 67px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+.btn3{
+    background-color: #0A3871;
+    color: #fff;
+}
+
+.btn3:focus{
+    background-color: gray;
+    color: #0A3871;
+}
+ 
+.btn4:focus{
+    background-color: #0A3871;
+    color: #fff;
+}
+
+
+.btn4{
+    margin-top: 10px;
+    background-color: #fff;
+    color:  #0A3871;
+}
+
+.ahorcado{
+  width: 100%;
+  height: 60vw;
+}
+
+.rellenarPalabra{
+    height: 25vh;
+}
+
+
+/*estilos input de rellenar*/
+
+.rellenarPalabra{
+    width: 70%;
+    margin: 0 25%;
+    display: flex;
+}
+
+.col-input{
+    width: 5%;
+    height: 30px;
+    padding: 0 1px;
+    font-size: 0.9rem;
+    border-bottom: blue solid;
+    margin: 0 0.5px;
+    
+}
+
+.phidden{
+    visibility: hidden;
+    display: inline;
+}
+
+.visible{
+    visibility: visible;
+    display: inline;
+}
+
+
+
+
+
+/*Tablet*/
+
+@media (min-width:768px){
+
+    .inputPalabra{
+       height: 75vh;
+    }
+    .accion2{
+        flex-direction: row;
+        margin: 10px;
+        justify-content: space-evenly
+    }
+
+    .btn3,.btn4{
+        width: 48%;
+     
+    }
+
+    .btn4{
+        margin-top: 0;
+    }
+
+    .ahorcado,.rellenarPalabra{
+        height: 38vh;
+    }
+    
+}
+
+/*escritorio*/
+
+@media (min-width:1280px){
+    .inputPalabra{
+        height: 70vh;
+    }
+}

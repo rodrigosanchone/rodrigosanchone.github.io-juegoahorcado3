@@ -1,0 +1,137 @@
+@import url(normalize.css);
+@import url(estilos2.css);
+
+/*generales*/
+
+a{
+  text-decoration: none;
+}
+
+/**celular*/
+
+
+body{
+  background: #E5E5E5;
+  width: 100%;
+}
+
+header{
+  width: 100%;
+}
+
+footer{
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+footer p{
+  color: #0A3871;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+}
+
+.logo{
+  margin-top: 30px;
+}
+
+
+
+.accion{
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px ;
+}
+
+.btn1{
+  width: 80%;
+  height: 105px;
+  border: #0A3871;
+  border-radius: 25px;
+  margin: 0 auto;
+  background-color: #0A3871;
+}
+
+.btn1 a, btn3 a{
+  color: #fff;
+}
+
+.btn2{
+  width: 70%;
+  height: 67px;
+  border: #0A3871;
+  border-radius: 25px;
+  margin: 10px auto;
+  background-color: #fff;
+}
+
+.btn2 a, btn4 a{
+  color: #0A3871;
+}
+
+.teclado-movil{
+  width: 80%;
+  padding: 0 10%;
+  height: 100px;
+  
+}
+
+.arriba, .abajo{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.teclado-movil p{
+  font-size: 1.3rem;
+  margin: 0 5px;
+  border: #0A3871 solid 1px;
+  padding: 1px;
+  cursor: pointer;
+  
+}
+
+.teclado-movil p:active{
+  background-color:#0A3871 ;
+  color: #E5E5E5;
+}
+
+/*Tablet*/
+@media (min-width:768px){
+  .accion{
+  
+    margin-top: 300px ;
+  }
+
+  footer p{
+  
+    font-size: 2.5em;
+  }
+}
+
+
+/*escritorio*/
+
+@media (min-width:1280px){
+
+  .accion{
+    margin-top: 190px;
+  }
+    
+    .btn1{
+      width: 20%;
+    }
+
+    .btn2{
+      width: 17%;
+    }
+
+    .teclado-movil{
+      display: none;
+    }
+
+
+  }
