@@ -27,16 +27,21 @@ const nuevaPalabra=()=>{
 /*codígo para verificar que letra se presiono en el teclado esta dentro de la palabra */
 const letraSeleccionada=letra=>{
   let palabra=mostrarPalabra
+
  
-  var hueco= document.querySelector('.phidden')
+  
   if(palabra.includes(letra)){
-    //let lugar= palabra.indexof(letra,1)
-    for(let i=0;i<=palabra.length;i++){
-      if(hueco[i]===letra){
-      hueco.className+="phidden"
-     }
+    let lugar= palabra.indexOf(letra)
+    console.log(lugar)
+    let p= document.querySelectorAll('.phidden')
+
+
+      if(palabra[lugar]===letra){
+         
+        p[lugar].className='visible'
+      
     }
-     
+   
   }else{
     alert('Lo siento fallo')
   }
