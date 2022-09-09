@@ -54,31 +54,31 @@ const nuevaPalabra = () => {
 /*codígo para verificar que letra se presiono en el teclado esta dentro de la palabra */
 const teclaPresionada = (e) => {
  
-  repetido=""
+
   letra = e.key.toUpperCase();
   if (letra.match(/^[a-zñ]$/i)) {
-     console.log(letra) 
+    if(repetido=letra){
+      acierto=acierto-1
+   
     letraSeleccionada(letra)
  }  
   }
-
+}
   const letraSeleccionada = (letra) => {
     let p = document.querySelectorAll(".rellenarPalabra p");
     if (palabra.includes(letra)) {
-    
-      for (let i = 0; i<= palabra.length; i++) {
       
+      for (let i = 0; i<= palabra.length; i++) {
+        
         if (palabra[i] === letra) {  
           p[i].className = "visible"; 
-          acierto++;
            console.log(acierto)
-          if(acierto==p.length){
+          if(acierto==palabra.length-1){
            alert('gano')
-           acierto=0
+           
           }
   
-         
-         
+          
         }
        
       }
@@ -92,7 +92,7 @@ const teclaPresionada = (e) => {
       alert("Lo siento fallo, tiene:" + error + "errores");
       span.innerHTML = letra;
       letras.appendChild(span);
-     /*  dibujarAhorcado(error); */
+       dibujarAhorcado(error); 
       if(error==8){
         alert("Perdites la pardida")
         error=0;
@@ -123,6 +123,68 @@ const pintarPalabra = () => {
   }
 
 };
+
+/**Dibujando el ahorcado */
+
+
+
+const dibujarAhorcado = (error) => {
+  switch (error) {
+    case 1:
+      pincel.fillRect(70, 0, 10, 400);
+      break;
+    case 2:
+      pincel.fillRect(70, 0, 60, 10);
+      break;
+
+    case 3:
+      /*cabeza*/
+      pincel.beginPath();
+      pincel.arc(125, 22, 12, 0, 2 * 3.14);
+      pincel.stroke();
+      break;
+    case 4:
+      /*cuerpo*/
+      pincel.fillRect(123, 35, 2, 60);
+      break
+    case 5:
+      /*brazo uno*/
+
+      pincel.moveTo(125, 40);
+      pincel.lineTo(96, 60);
+
+      pincel.stroke();
+       break
+    case 6:
+      /*brazo dos*/
+      pincel.beginPath(0);
+      pincel.moveTo(150, 65);
+      pincel.lineTo(122, 40);
+
+      pincel.stroke();
+      break;
+    case 7:  
+
+      /*pierna uno */
+
+      pincel.beginPath(0);
+      pincel.moveTo(123, 90);
+      pincel.lineTo(110, 110);
+
+      pincel.stroke();
+     break;
+
+     case 8:
+      /*pierna dos*/
+
+      pincel.beginPath(0);
+      pincel.moveTo(123, 89);
+      pincel.lineTo(142, 105);
+
+      pincel.stroke();
+      break;
+  }
+}
 
 const nuevaPartida = () => {
   nuevaPalabra();
