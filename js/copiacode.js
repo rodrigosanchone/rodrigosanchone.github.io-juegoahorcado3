@@ -44,6 +44,8 @@ var visible=0;
 
 var letra="";
 
+
+
 var pincel = cuadro.getContext("2d");
 
 /**Selecciono palabra del arreglo al azar */
@@ -124,7 +126,6 @@ const letraSeleccionada = (letra) => {
       ahorcado.innerHTML=""
 
     }
-  }
 
   
 };

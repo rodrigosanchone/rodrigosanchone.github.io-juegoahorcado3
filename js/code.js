@@ -14,14 +14,16 @@ var repitio=0
 
 anno.innerHTML = fecha;
 
+
 const palabras = [
-  "casa",
+   "casa",
   "manzana",
   "auto",
   "pueblo",
-  "manzanilla",
+  "consuelo",
   "sombrero",
-  "barco",
+  "barco", 
+
 ];
 
 var rellenar = document.querySelector(".rellenarPalabra");
@@ -43,6 +45,15 @@ var letra;
 
 var pincel = cuadro.getContext("2d");
 
+var gano = false
+
+var indexe;
+
+let key= document.querySelectorAll(".key")
+
+
+
+
 /**Selecciono palabra del arreglo al azar */
 const nuevaPalabra = () => {
   palabraRamdon = Math.floor(Math.random() * palabras.length);
@@ -50,6 +61,8 @@ const nuevaPalabra = () => {
   palabra= mostrarPalabra
   console.log(palabra)
 };
+
+
 
 /*codígo para verificar que letra se presiono en el teclado esta dentro de la palabra */
 const teclaPresionada = (e) => {
@@ -64,47 +77,44 @@ const teclaPresionada = (e) => {
  }  
   }
 }
-  const letraSeleccionada = (letra) => {
+const letraSeleccionada = (letra) => {
     let p = document.querySelectorAll(".rellenarPalabra p");
+    let visible = document.querySelectorAll('.visible')
     if (palabra.includes(letra)) {
       
       for (let i = 0; i<= palabra.length; i++) {
         
         if (palabra[i] === letra) {  
           p[i].className = "visible"; 
-           console.log(acierto)
-          if(acierto==palabra.length-1){
+          console.log(visible.length)
+          if(visible.length+1==palabra.length){
            alert('gano')
-           
+           visible=0;
           }
   
           
         }
+     
        
       }
-       
-  
-      
-    } else {
-      error += 1;
-      console.log("Error " + error);
-      var span = document.createElement("span");
-      alert("Lo siento fallo, tiene:" + error + "errores");
-      span.innerHTML = letra;
-      letras.appendChild(span);
-       dibujarAhorcado(error); 
-      if(error==8){
-        alert("Perdites la pardida")
-        error=0;
-        nuevaPartida()
-        ahorcado.innerHTML=""
-  
-      }
-    }
-  
+    } 
+    else {
+        error += 1;
+        console.log("Error " + error);
+        var span = document.createElement("span");
+        alert("Lo siento fallo, tiene:" + error + "errores");
+        span.innerHTML = letra;
+        letras.appendChild(span);
+        dibujarAhorcado(error);
+        if(error==8){
+          alert("Perdites la pardida")
+          error=0;
+          nuevaPartida()
+          ahorcado.innerHTML=""
     
-  };
-
+        }
+      }
+}
 /*pinta los espacios que tiene la palabra selccionada al azar*/
 const pintarPalabra = () => {
   rellenar.innerHTML = "";
@@ -186,11 +196,22 @@ const dibujarAhorcado = (error) => {
   }
 }
 
+
 const nuevaPartida = () => {
   nuevaPalabra();
   pintarPalabra()
   document.addEventListener("keydown", teclaPresionada);
-  ahorcado.innerHTML==cuadro
+  ahorcado.innerHTML==cuadro 
+  key.forEach(i=>i.addEventListener('click',verificarTeclaMovil=()=>{
+    letra=i.innerHTML
+    letraSeleccionada(letra)
+  }))   
+
+ /* for(let y=0;y<key.length;y++){
+  key[y].addEventListener('click',teclaPresionadMovil) 
+
+  teclilla=y
+}  */
 
 };
 
