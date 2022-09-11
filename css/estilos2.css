@@ -1,3 +1,4 @@
+lines (124 sloc) 2.12 KB
 /*celular*/
 .inputPalabra{
     width: 80%;
@@ -39,11 +40,14 @@
 .btn3,.btn4{
     width:90%;
     margin:auto;
+    padding-top: 2rem;
     height: 67px;
     border-radius: 25px;
     border: none;
     cursor: pointer;
+    text-align:center;
 }
+
 
 
 
@@ -72,10 +76,11 @@
 .ahorcado{
   width: 100%;
   height: 60vw;
+  margin-top: 10px;
 }
 
 .rellenarPalabra{
-    height: 25vh;
+    height: 10vh;
 }
 
 canvas{
@@ -92,8 +97,9 @@ canvas{
 }
 
 .letrasErroneas{
-    width: 80%;
-    margin: -10px 20% 0;
+    width: 60%;
+    margin: 0 20px;
+    padding: 0 15rem;
 }
 
 .col-input{
@@ -137,7 +143,7 @@ canvas{
 
     .btn3,.btn4{
         width: 48%;
-     
+       padding-top:3rem;
     }
 
     .btn4{
@@ -145,7 +151,7 @@ canvas{
     }
 
     .ahorcado{
-     height: auto;
+     height: 400px;
     }
 
     canvas{

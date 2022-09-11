@@ -90,6 +90,9 @@ const letraSeleccionada = (letra) => {
           if(visible.length+1==palabra.length){
            alert('gano')
            visible=0;
+           gano=true
+           letras.innerHTML=""
+           ahorcado.innerHTML=""
           }
   
           
@@ -108,10 +111,9 @@ const letraSeleccionada = (letra) => {
         dibujarAhorcado(error);
         if(error==8){
           alert("Perdites la pardida")
-          error=0;
           nuevaPartida()
-          ahorcado.innerHTML=""
-    
+         
+          letras.innerHTML=""
         }
       }
 }
@@ -143,6 +145,9 @@ const dibujarAhorcado = (error) => {
     case 1:
       pincel.fillRect(70, 0, 10, 400);
       break;
+      if(gano=true){
+        pincel.clearRect(70, 0, 10, 400)
+  }
     case 2:
       pincel.fillRect(70, 0, 60, 10);
       break;
@@ -198,14 +203,21 @@ const dibujarAhorcado = (error) => {
 
 
 const nuevaPartida = () => {
+  error=0
+
+  dibujarAhorcado(error)
   nuevaPalabra();
-  pintarPalabra()
-  document.addEventListener("keydown", teclaPresionada);
-  ahorcado.innerHTML==cuadro 
+  pintarPalabra();
+  gano=false
+  error=0;
+  document.addEventListener("keydown", teclaPresionada)
+  letras.innerHTML=""
   key.forEach(i=>i.addEventListener('click',verificarTeclaMovil=()=>{
     letra=i.innerHTML
     letraSeleccionada(letra)
-  }))   
+  }))  
+  
+
 
  /* for(let y=0;y<key.length;y++){
   key[y].addEventListener('click',teclaPresionadMovil) 
