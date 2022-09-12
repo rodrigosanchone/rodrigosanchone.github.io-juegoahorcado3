@@ -32,8 +32,6 @@ function ingresarPalabra(){
 
 
 
-/*ingreso el arreglo al localStorage*/
-
 /*estraigo el arreglo del local Storags*/
 let palabras = JSON.parse(localStorage.getItem('palabras'));
 
