@@ -1,4 +1,4 @@
-lines (124 sloc) 2.12 KB
+
 /*celular*/
 .inputPalabra{
     width: 80%;
@@ -40,30 +40,32 @@ lines (124 sloc) 2.12 KB
 .btn3,.btn4{
     width:90%;
     margin:auto;
-    padding-top: 2rem;
+    padding: auto;
     height: 67px;
     border-radius: 25px;
     border: none;
     cursor: pointer;
     text-align:center;
 }
-
-
-
-
 .btn3{
     background-color: #0A3871;
     color: #fff;
+    text-align: center  ;
 }
+
+
 
 .btn3:focus{
     background-color: gray;
     color: #0A3871;
 }
+
+.btn4 a{
+    color: #0A3871;
+}
  
 .btn4:focus{
-    background-color: #0A3871;
-    color: #fff;
+    background-color: #0A3871; 
 }
 
 
@@ -72,6 +74,8 @@ lines (124 sloc) 2.12 KB
     background-color: #fff;
     color:  #0A3871;
 }
+
+
 
 .ahorcado{
   width: 100%;
@@ -140,15 +144,20 @@ canvas{
         justify-content: space-evenly
     }
 
+    .btn3{
+        margin-top: 10px;
+    }
+
     .btn3,.btn4{
-        width: 48%;
-       padding-top:3rem;
+      display: flex;
+      padding: auto;
+      margin: auto;
+      width: 48%;
+      align-items: center;
+      justify-content: center;
     }
 
-    .btn4{
-        margin-top: 0;
-    }
-
+   
     .ahorcado{
      height: 400px;
     }

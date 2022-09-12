@@ -1,57 +1,49 @@
+/*varibles*/
 var fecha = new Date().getFullYear();
-
 var error = 0;
-
 var acierto = 0;
-
 const btn = document.querySelector(".btn3");
-
 const anno = document.querySelector("span");
-
 const ahorcado=document.querySelector(".ahorcado")
-
 var repitio=0
-
 anno.innerHTML = fecha;
-
-
-const palabras = [
-   "casa",
-  "manzana",
-  "auto",
-  "pueblo",
-  "consuelo",
-  "sombrero",
-  "barco", 
-
-];
-
 var rellenar = document.querySelector(".rellenarPalabra");
-
 var letras = document.querySelector(".letrasErroneas");
-
 var cuadro = document.querySelector("canvas");
-
-
-
 var palabra = "";
-
 let  mostrarPalabra="";
-
-
 var visible=0;
-
 var letra;
-
 var pincel = cuadro.getContext("2d");
-
-var gano = false
-
 var indexe;
-
 let key= document.querySelectorAll(".key")
 
 
+
+
+function ingresarPalabra(){
+    alert("Palabra dentro")
+}
+
+/* Arreglo de plabras*/
+var palabrasLista = [
+ "casa",
+ "manzana",
+ "auto",
+ "pueblo",
+ "consuelo",
+ "sombrero",
+ "barco", 
+];
+
+
+
+
+
+/*ingreso el arreglo al localStorage*/
+localStorage.setItem('palabras',JSON.stringify(palabrasLista));
+/*estraigo el arreglo del local Storags*/
+let palabras = JSON.parse(localStorage.getItem('palabras'));
 
 
 /**Selecciono palabra del arreglo al azar */
@@ -64,7 +56,7 @@ const nuevaPalabra = () => {
 
 
 
-/*codígo para verificar que letra se presiono en el teclado esta dentro de la palabra */
+/*codígo para verificar que letra se presiono en el teclado */
 const teclaPresionada = (e) => {
  
 
@@ -72,18 +64,17 @@ const teclaPresionada = (e) => {
   if (letra.match(/^[a-zñ]$/i)) {
     if(repetido=letra){
       acierto=acierto-1
-   
     letraSeleccionada(letra)
  }  
   }
 }
+/*si la letra existe se debe mostrar*/
 const letraSeleccionada = (letra) => {
     let p = document.querySelectorAll(".rellenarPalabra p");
     let visible = document.querySelectorAll('.visible')
-    if (palabra.includes(letra)) {
-      
+    if (palabra.includes(letra)) {  
       for (let i = 0; i<= palabra.length; i++) {
-        
+ 
         if (palabra[i] === letra) {  
           p[i].className = "visible"; 
           console.log(visible.length)
@@ -95,13 +86,11 @@ const letraSeleccionada = (letra) => {
            ahorcado.innerHTML=""
           }
   
-          
-        }
-     
-       
+        }    
       }
     } 
     else {
+      /*si no existe se cuenta cómo erro y se llama la función pintar ahorcado*/
         error += 1;
         console.log("Error " + error);
         var span = document.createElement("span");
@@ -145,9 +134,7 @@ const dibujarAhorcado = (error) => {
     case 1:
       pincel.fillRect(70, 0, 10, 400);
       break;
-      if(gano=true){
-        pincel.clearRect(70, 0, 10, 400)
-  }
+
     case 2:
       pincel.fillRect(70, 0, 60, 10);
       break;
@@ -204,7 +191,6 @@ const dibujarAhorcado = (error) => {
 
 const nuevaPartida = () => {
   error=0
-
   dibujarAhorcado(error)
   nuevaPalabra();
   pintarPalabra();
@@ -217,22 +203,17 @@ const nuevaPartida = () => {
     letraSeleccionada(letra)
   }))  
   
-
-
- /* for(let y=0;y<key.length;y++){
-  key[y].addEventListener('click',teclaPresionadMovil) 
-
-  teclilla=y
-}  */
+  
 
 };
-
-
-
 
 
 nuevaPartida();
 
 
+let ingresaPalabra= document.querySelector("#ingresarPalabra");
+let inputPalabra= document.querySelector("#inputPalabra")
+ingresaPalabra.addEventListener('click',ingresarPalabra)
 
-btn.addEventListener("click", nuevaPartida);
+
+
