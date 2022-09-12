@@ -26,24 +26,18 @@ function ingresarPalabra(){
 }
 
 /* Arreglo de plabras*/
-var palabrasLista = [
- "casa",
- "manzana",
- "auto",
- "pueblo",
- "consuelo",
- "sombrero",
- "barco", 
-];
+
 
 
 
 
 
 /*ingreso el arreglo al localStorage*/
-localStorage.setItem('palabras',JSON.stringify(palabrasLista));
+
 /*estraigo el arreglo del local Storags*/
 let palabras = JSON.parse(localStorage.getItem('palabras'));
+
+
 
 
 /**Selecciono palabra del arreglo al azar */
