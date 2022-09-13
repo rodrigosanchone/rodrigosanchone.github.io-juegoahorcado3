@@ -21,29 +21,10 @@ let key= document.querySelectorAll(".key")
 
 
 
-function ingresarPalabra(){
-    alert("Palabra dentro")
-}
 
- /* Arreglo de plabras*/
+ let palabras=JSON.parse(localStorage.getItem('palabras'));
 
-/* var palabrasLista = [
-  "casa",
- "manzana",
- "auto",
- "pueblo",
- "consuelo",
- "sombrero",
- "barco", 
-];
-
-
-localStorage.setItem('palabras',JSON.stringify(palabrasLista));     */
-
-/*estraigo el arreglo del local Storags*/
-let palabras = JSON.parse(localStorage.getItem('palabras'));
-
-
+console.log(palabras)
 
 
 /**Selecciono palabra del arreglo al azar */
@@ -210,9 +191,9 @@ const nuevaPartida = () => {
 nuevaPartida();
 
 
-let ingresaPalabra= document.querySelector("#ingresarPalabra");
-let inputPalabra= document.querySelector("#inputPalabra")
-ingresaPalabra.addEventListener('click',ingresarPalabra)
+
+
+
 
 
 
