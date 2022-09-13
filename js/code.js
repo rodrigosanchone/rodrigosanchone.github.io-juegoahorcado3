@@ -40,9 +40,6 @@ var palabrasLista = [
 
 localStorage.setItem('palabras',JSON.stringify(palabrasLista));    
 
-
-
-
 /*estraigo el arreglo del local Storags*/
 let palabras = JSON.parse(localStorage.getItem('palabras'));
 
