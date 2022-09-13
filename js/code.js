@@ -27,7 +27,16 @@ function ingresarPalabra(){
 
 /* Arreglo de plabras*/
 
-
+var palabrasLista = [
+  "casa",
+ "manzana",
+ "auto",
+ "pueblo",
+ "consuelo",
+ "sombrero",
+ "barco", 
+];
+localStorage.setItem('palabras',JSON.stringify(palabrasLista));    
 
 
 
