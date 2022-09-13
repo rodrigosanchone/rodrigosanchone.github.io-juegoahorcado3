@@ -36,6 +36,8 @@ var palabrasLista = [
  "sombrero",
  "barco", 
 ];
+
+
 localStorage.setItem('palabras',JSON.stringify(palabrasLista));    
 
 
