@@ -11,7 +11,7 @@ var palabrasLista = [
    "sombrero",
    "barco", 
   ];
-
+  localStorage.setItem('palabras',JSON.stringify(palabrasLista));    
 function ingresarPalabra(){
     let pattern=/^[A-Z]+$/
     let input= inputPalabra.value;
