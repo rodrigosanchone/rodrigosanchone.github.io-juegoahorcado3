@@ -25,9 +25,9 @@ function ingresarPalabra(){
     alert("Palabra dentro")
 }
 
-/* Arreglo de plabras*/
+ /* Arreglo de plabras*/
 
-var palabrasLista = [
+/* var palabrasLista = [
   "casa",
  "manzana",
  "auto",
@@ -38,7 +38,7 @@ var palabrasLista = [
 ];
 
 
-localStorage.setItem('palabras',JSON.stringify(palabrasLista));    
+localStorage.setItem('palabras',JSON.stringify(palabrasLista));     */
 
 /*estraigo el arreglo del local Storags*/
 let palabras = JSON.parse(localStorage.getItem('palabras'));
@@ -59,7 +59,6 @@ const nuevaPalabra = () => {
 /*codígo para verificar que letra se presiono en el teclado */
 const teclaPresionada = (e) => {
  
-
   letra = e.key.toUpperCase();
   if (letra.match(/^[a-zñ]$/i)) {
     if(repetido=letra){
@@ -100,9 +99,9 @@ const letraSeleccionada = (letra) => {
         dibujarAhorcado(error);
         if(error==8){
           alert("Perdites la pardida")
-          nuevaPartida()
          
-          letras.innerHTML=""
+          window.location.href = "juego.html";
+        
         }
       }
 }

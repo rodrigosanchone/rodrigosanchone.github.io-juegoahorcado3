@@ -1,3 +1,5 @@
+
+
 let ingresaPalabra= document.querySelector("#ingresarPalabra");
 let inputPalabra= document.querySelector("#inputPalabra")
 ingresaPalabra.addEventListener('click',ingresarPalabra)
@@ -11,8 +13,7 @@ var palabrasLista = [
  "sombrero",
  "barco", 
 ];
-
-
+localStorage.setItem('palabras',JSON.stringify(palabrasLista)); 
 function ingresarPalabra(){
     let pattern=/^[A-Z]+$/
     let input= inputPalabra.value;
