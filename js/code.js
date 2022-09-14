@@ -20,12 +20,10 @@ let key= document.querySelectorAll(".key")
 
 
 
+let palabras=JSON.parse(localStorage.getItem('palabras'));
 
-
- let palabras=JSON.parse(localStorage.getItem('palabras'));
 
 console.log(palabras)
-
 
 /**Selecciono palabra del arreglo al azar */
 const nuevaPalabra = () => {
